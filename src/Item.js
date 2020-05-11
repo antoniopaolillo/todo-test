@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 function Item(props) {
   const { content } = props
   return (
-    <div className="Item">
+    <h2 className="Item">
       {content}
-    </div>
+    </h2>
   );
 }
 
