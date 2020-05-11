@@ -2,8 +2,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from '../App';
 
-test('Verificando se existe um campo para inserir a tarefa.', () => {
+describe('Testando a aplicação, testando input', () => {
   const { getByLabelText, getByText } = render(<App />)
-  expect(getByText('Tarefa:')).toBeInTheDocument();
-  expect(getByLabelText('Tarefa:')).toBeInTheDocument();
+  const inputEmail = getByLabelText('Tarefa:');
+  const labelEmail = getByText('Tarefa:');
+  test('Verificando se o label e o input existem no documento', () => {
+    expect(labelEmail).toBeInTheDocument();
+    expect(inputEmail).toBeInTheDocument();
+  });
+    
+  test('Verificando o tipo do input', () => {
+    expect(inputEmail.type).toBe('text');
+  });
 });
